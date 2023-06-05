@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFD700 #ef700;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.New_Goal_Controlador">
+   <children>
+      <Label layoutX="236.0" layoutY="27.0" text="Nueva Meta">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="125.0" text="Meta:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="209.0" text="Presupuesto:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="Nm_label1" layoutX="123.0" layoutY="171.0" />
+      <Label fx:id="Nm_label2" layoutX="123.0" layoutY="262.0" />
+      <TextField fx:id="N_Meta" layoutX="329.0" layoutY="126.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="N_presupuesto" layoutX="329.0" layoutY="210.0" prefHeight="25.0" prefWidth="218.0" />
+      <Button fx:id="New_goal" layoutX="241.0" layoutY="305.0" mnemonicParsing="false" onAction="#Insert_New_Goal" text="Añadir Nueva meta" />
+      <Button fx:id="Nm_Inicio" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#Volver_Inicio" text="Volver al Inicio" />
+   </children>
+</AnchorPane>

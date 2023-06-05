@@ -1,0 +1,72 @@
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class ControladorTest {
+    private Controlador controlador;
+    private VistaMock vistaMock;
+
+    @BeforeEach
+    public void setUp() {
+        vistaMock = new VistaMock();
+        controlador = new Controlador(vistaMock);
+    }
+
+    @Test
+    public void testCalcularPresupuesto_EstrategiaAhorro() {
+        // Valores de entrada y resultado esperado
+        double ingresos = 5000.0;
+        double gastos = 3000.0;
+        double saldoEsperado = ingresos - gastos;
+
+        // Ejecución del método a probar
+        controlador.calcularPresupuesto(ingresos, gastos);
+
+        // Aserciones para verificar los resultados
+        Assertions.assertEquals(ingresos, vistaMock.ingresos);
+        Assertions.assertEquals(gastos, vistaMock.gastos);
+        Assertions.assertEquals(saldoEsperado, vistaMock.saldoRestante);
+    }
+
+    @Test
+    public void testCalcularPresupuesto_EstrategiaControlGastos() {
+        // Valores de entrada y resultado esperado
+        double ingresos = 5000.0;
+        double gastos = 3000.0;
+        double saldoEsperado = ingresos - 1.2 * gastos;
+
+        // Cambio de estrategia del controlador
+        controlador.cambiarEstrategia(new EstrategiaControlGastos());
+        // Ejecución del método a probar
+        controlador.calcularPresupuesto(ingresos, gastos);
+
+        // Aserciones para verificar los resultados
+        Assertions.assertEquals(ingresos, vistaMock.ingresos);
+        Assertions.assertEquals(gastos, vistaMock.gastos);
+        Assertions.assertEquals(saldoEsperado, vistaMock.saldoRestante);
+    }
+
+    // Clase VistaMock para simular la vista en las pruebas
+    private class VistaMock implements Vista {
+        private double ingresos;
+        private double gastos;
+        private double saldoRestante;
+
+        @Override
+        public double obtenerIngresos() {
+            return 0;
+        }
+
+        @Override
+        public double obtenerGastos(String categoria) {
+            return 0;
+        }
+
+        @Override
+        public void mostrarResumen(double ingresos, double gastos, double saldoRestante) {
+            this.ingresos = ingresos;
+            this.gastos = gastos;
+            this.saldoRestante = saldoRestante;
+        }
+    }
+}

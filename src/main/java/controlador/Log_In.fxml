@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Logged_in_Controlador">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: FED700;">
+         <children>
+            <Label layoutX="52.0" layoutY="103.0" prefHeight="35.0" prefWidth="90.0" text="Ingresar">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="180.0" text="¿No estas registrado?">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="In_reg" layoutX="56.0" layoutY="242.0" mnemonicParsing="false" onAction="#Camb_reg" prefHeight="35.0" prefWidth="83.0" text="Registrarse" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="200.0" layoutY="-1.0" prefHeight="400.0" prefWidth="400.0">
+         <children>
+            <ImageView fitHeight="128.0" fitWidth="140.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/393a7d8e436bccc3aedfd43865b48890-candado.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="In_ing" layoutX="160.0" layoutY="305.0" mnemonicParsing="false" onAction="#Ingresar" prefHeight="35.0" prefWidth="83.0" text="Ingresar" />
+            <Label layoutX="75.0" layoutY="180.0" text="Nombre">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="235.0" text="Contraseña">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="In_nombre" layoutX="218.0" layoutY="178.0" />
+            <TextField fx:id="In_con" layoutX="218.0" layoutY="233.0" />
+            <Label fx:id="In_label" layoutX="187.0" layoutY="369.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
